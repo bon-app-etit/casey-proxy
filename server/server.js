@@ -23,11 +23,13 @@ app.get('/restaurants/:id', function(req, res) {
         })
 })
 
-app.get('/restaurants/:id', function(req, res) {
-    var id = req.params.id;
-    axios.get(`http://localhost:3001/restaurants/${id}`)
+app.get('/restaurants/:i/dish/review/:id', function(req, res) {
+    var reviewId = req.params.id;
+    //console.log('reviewId 'reviewId);
+
+    axios.get(`http://localhost:3001/restaurants/1/dish/review/${reviewId}`)
         .then((response) => {
-            //console.log(response.data);
+            console.log(response.data);
             res.send(response.data)
             // res.sendStatus(200);
             //res.end();           
